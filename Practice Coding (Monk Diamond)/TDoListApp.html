@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            To Do List App
+        </title>
+        <style>
+        
+        </style>
+        <script>
+                function addItem() {
+                    var newItem = createElement("div");
+                    newItem.innerHTML = document.getElementById("box").value;
+                    newItem.onclick = removeItem;
+                    document.getElementById("list").appendChild(newItem);
+                }
+                function removeItem() {
+                    document.getElementById("list").removeChild(this);
+                }
+                </script>
+    </head>
+    <body>
+        <p> Special Exhibition To-Do List</p>
+        <br/>
+        <input type="text" id="Box" value="Type Here to add task"/>
+        <br/>
+        <input type="button" value=" Add Item" onclick="addItem();"/>
+        <br/>
+        <div id="list"></div>
+        
+    </body>
+</html>
