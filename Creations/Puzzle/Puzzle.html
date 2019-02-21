@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Find the Hidden Passcode
+    </title>
+    <style>
+        .heading {
+                background-color: lightblue;
+                height: 300px;
+                width: 100%;
+                text-align: center;
+                font-size: 38px;
+                border: 1px solid lightblue;
+            }
+            .pad {
+                padding: 50px;
+            }
+            .body {
+                background-color: lightgreen;
+                width: 100%;
+                height: 900px;
+                border: 1px solid lightgreen;
+            }
+            .bodytext {
+                text-align: center;
+                font-size: 24pt;
+
+            }
+        </style>
+</head>
+
+<body>
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("textbox")
+            var passwordText = password.value;
+            if (passwordText == "103206309412") {
+                alert("Second Hint: 204307******")
+            } else {
+                alert("Incorrect Answer!");
+            }
+
+        }
+        function Hint2() {
+            var password2 = document.getElementById("textbox2");
+            var passwordText2 = password2.value;
+            if (passwordText2 == "204307410523") {
+                alert("Third Hint: BLOBBLES");
+            } else {
+                alert("Incorrect Answer!");
+                return false;
+            }
+        }
+
+        function hint() {
+            var Hint = document.getElementById("textbox4");
+            var HintText = Hint.value;
+            if (HintText == "BLOBBLES") {
+                alert("Maybe Look At BLOBBLES from a different angle?");
+            } else {
+
+                alert("Put the 3rd Hint in the correct Textbox and you can't skip the other hints!");
+                return false;
+            }
+        }
+        
+        function Hint3() {
+            var password3 = document.getElementById("textbox3");
+            passwordText3 = password3.value;
+            if (passwordText3 == "53788078") {
+                alert("Final Code!: 037148692");
+            }
+            else {
+                alert("Incorrect Answer!");
+                return false;
+            }
+        }
+
+        function Passcode() {
+            var passcode = document.getElementById("lasttextbox")
+            var passcodetext = passcode.value
+            if (passcodetext == "037148692") {
+                alert("Congratulations on Finding the Hidden Passcode! You found the hidden passcode through puzzles and steps!");
+            }
+            else {
+                alert("Incorrect Answer!")
+                return false;
+            }
+        }
+
+    </script>
+    <div class="heading">
+        <p class="pad"> Can you find the Hidden Passcode?</p>
+    </div>
+    <div class="body bodytext">
+        <p> Remember: * = fill in the blank with number</p>
+        <p> First Hint: 103206******</p>
+        <p> Write Answer for 1st Step Here: <input id="textbox" type="text"></p>
+        <a href="Puzzle.html" onclick="return checkPassword();"> Click here to Submit Answer for Next Step</a>
+        <p> Write Answer for 2nd Step Here: (Also a hint: Compare to the first step code) <input id="textbox2" type="text"></p>
+        <a href="Puzzle.html" onclick="return Hint2();"> Click here to Submit Answer for Next Step</a>
+        <p> Write Answer for 3rd Step Here <input id="textbox3" type="text"></p>
+        <p> Write the 3rd Step Here for a Hint to Solve it: <input id="textbox4" type="text"></p>
+        <a href="Puzzle.html" onclick="return hint();"> Click for a Hint for the 3rd Step After the Textbox is filled</a>
+        <br />
+        <a href="Puzzle.html" onclick="return Hint3();"> Click to submit the Correct (AND FULL) 3rd Step code</a>
+        <p> Write Final Code Here: <input id="lasttextbox" type="text"></p>
+        <a href="Puzzle.html" onclick="return Passcode()"> Click Here to Submit your Final Passcode! </a>
+        <p> Created By: Edison Le</p>
+
+    </div>
+</body>
+
+</html>

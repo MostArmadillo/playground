@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Can You Find the Hidden Passcode? (continued) </title>
+    <style>
+        .heading {
+            background-color: lightblue;
+            width: 100%;
+            height: 300px;
+            text-align: center;
+            font-size: 36pt;
+            border: 1px solid lightblue;
+            margin: 0px;
+        }
+        .body {
+            background-color: lightgreen;
+            
+            width: 100%;
+            height: 1500px;
+            text-align: center;
+            font-size: 18pt;
+            border: 1px solid lightgreen;
+        }
+        .left {
+            float: left;
+        }
+        .right {
+            float: right;
+        }
+        .center {
+            float: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="heading">
+        <br/> 
+        <p> Can You Find the Hidden Passcode? (Continued)</p>
+    </div>
+    <div class="body">
+        <p> Instructions:
+            Solve each problem and the answer to that problem should be a number. The number right next to the
+            problem is where the digit the answer is in the code. 
+        </p>
+        <p> 1st number(s): How Many Words are on this page? (The equation on the 7th number doesn't count) </p>
+        <p> 2nd number: How many days are in a week?</p>
+        <p> 3rd number:What step of the Puzzle is this page on? (Hint: 2nd 3rd 4th 1st)</p>
+        <p> 4th number: The billion number of people in the Earth in 2019</p>
+        <p id="demo" onclick="myFunction()"> Click Here for solution for the 4th number</p>
+        <p> 5th number(s): How many hours are in a day?</p>
+        <p> 6th number: What is the answer to (5 - 4) + 6</p>
+        <p> 7th Number: how many questions are on this page?</p>
+        <p> Enter Code Here: <input id="textbox2" type="text"></p>
+        <button onclick="checkcode()"> Submit Final Code Here</button>
+    </div>
+    <script>
+       function myFunction() {
+  document.getElementById("demo").innerHTML = "7 billion"
+        }
+        function checkcode() {
+            var password2 = document.getElementById("textbox2");
+            var passwordText2 = password2.value;
+            if (passwordText2 == "1287272477") {
+                alert("Congrats! You found the hidden passcode!");
+            } else {
+                alert("Incorrect Code!");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
