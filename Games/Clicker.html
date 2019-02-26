@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Clicker Game</title>
+        <script>
+           var count = 0;
+            function updateCount() {
+                count = count + 1;
+                document.getElementById("number").innerHTML = count;
+                setTimeout(updateCount, 1000);
+            }
+        </script>
+        <style>
+            #board {
+                background-color: lightblue;
+                width: 100%;
+                height: 1000px;
+                
+                float: left;
+            }
+            #number {
+                color: black;
+                font-size: 18pt;
+            }
+            .box {
+                background-color: blue;
+                width: 120px;
+                height: 120px;
+                float: left;
+                margin: 10px;
+                padding: 10px;
+            }
+            .target {
+                
+            }
+        </style>
+    </head>
+    <body>
+            
+        <div id="board">
+                <div id="number"></div>
+                <div class="box">1 How many</div>
+                <Div class="box">2</Div>
+                <div class="box">3</div>
+                <div class="box">4</div>
+                <div class="box">5</div>
+                <div class="box">6</div>
+                <Div class="box">7</Div>
+                <div class="box">8</div>
+                <div class="box">9</div>
+                <div class="box">10</div>
+        </div>
+        <script>
+            updateCount();
+            gameLoop();
+            function gameLoop() {
+
+            }
+        </script>
+    </body>
+</html>
