@@ -62,7 +62,7 @@
 </head>
 
 <body>
-    <input id="startgamebutton" type="button" value="Play" onclick="startGame()">
+    
     <div id="board">
         <div id="number"></div>
         <p class="heading"> Quiz and Questions Level 2</p>
@@ -71,8 +71,7 @@
             Each box will have an answer, one of these boxes has the correct answer to be inputted in the textbox below
             so you have to keep solving the boxes and guessing which boxes' answer is correct before the timer reaches
             180 seconds.
-            Now click play when you've finished reading the instructions. If you've already pressed Play, refresh the
-            page.
+            Now refresh the page and start.
         </p>
 
         <div class="box">1 What is the answer to the number of states in the U.S added to 37 + 14 so the math is
@@ -86,20 +85,16 @@
         <Div class="box">7 Solve this poem: <br />
             Too solve this poem. Find the hidden numbers. This poem tells in the instructions of this box aswell as a
             clue for the answer to box 7
-            For the poem it asks for a three dighit number. One of our hidden numbers is obvious to locate, can you find
-            the hidden numbers to solve this box/poem?
+            Fo.r the poem it asks for a three dighit number. One of our hidden numbers is obvious to locate, can you find
+            the hidden numbers to solve this box/poem? Plus this poem asks you if you ate something. (so random)
             If you give up, here's a hint: Read this poem out loud and scroll down for an even bigger hint.
         </Div>
         <div class="box">8 There are a total of ? numbers in the BOXES ONLY.</div>
-        <div class="box">9 What is the answer to box 1 1 added to the answer to box 5? (33)</div>
-        <div class="box">10 If the code is 2 letters ahead of its original letter ex:
-            y = z or a = c, what is the original word for this code: FSl
+        <div class="box">9 How many numbers does this have: CIHU89FYF2HFIAH1879FH109E190L</div>
+        <div class="box">10 The answer to this box is the answer to 1 + 1 + 1 + 1 + 1 + 1 + 1 + 0 + 0 x 0 = ?
         </div>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+        
+        
         <p style="text-align: center; font-size: 18pt; float: center;"> One of the answers in the boxes above has the
             answer to get to
             the next level</p>
@@ -111,13 +106,12 @@
         </div>
 
     </div>
-    <br />
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    <br/>
-    <p> Big hint for box 7: word too = number 2</p>
+    <p> word too = 2 and some words  are homonyms that are the numbers of the code except for the obvious one</p>
+    
     <script>
         var loops = 0;
         var peopleVisible = false;
+        startGame();
         function startGame() {
             updateCount();
             gameLoop();
@@ -138,12 +132,11 @@
         function checkanswer() {
             var answer = document.getElementById("textbox")
             var answertext = answer.value
-            if (answertext == "241") {
+            if (answertext == "2418") {
                 window.location.href = "Quiz and Questions Level 3.html"
             } else {
-                if(answertext == "violin") {
-                    window.location.href = "Quiz and Questions Level 3.html"
-                }
+                alert(" Not this one")
+                
             }
         }
     </script>
