@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Clicker Game Level 2
+    </title>
+    <style>
+        .heading {
+            background-color: darkgoldenrod;
+            width: 100%;
+            height: 300px;
+            font-size: 40pt;
+            text-align: center;
+            border: 1px solid darkgoldenrod;
+        }
+
+        .Instructions {
+            background-color: grey;
+            width: 100%;
+            height: 300px;
+            font-size: 18pt;
+            text-align: center;
+            border: 1px solid grey;
+        }
+
+        #board {
+            background-color: lightblue;
+            width: 100%;
+            height: 950px;
+            border: 1px solid lightblue;
+        }
+
+        .box {
+            background-color: blue;
+            color: white;
+            width: 120px;
+            height: 120px;
+            text-align: center;
+            margin: 10px;
+            float: left
+        }
+
+        .visible {
+            display: block;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script></script>
+</head>
+
+<body>
+    <div class="heading">
+        <br />
+        <p> Clicker</p>
+    </div>
+    <div class="Instructions">
+
+        <input id="Play" value="Play (please don't press me more than once unless the page has been refreshed)"
+            type="button" onclick="startGame()">
+        <h1> Notes</h1>
+        <p style="font-size: 18pt;"> Only difference is 4 more boxes have been added and when time runs out you will be
+            transported to the previous page.
+
+        </p>
+    </div>
+    <div id="board">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <script>
+        var loops = 0;
+        var peopleVisible = false;
+        var gameScore = 0;
+        function startGame() {
+            gameLoop();
+        }
+
+        function gameLoop() {
+            peopleVisible = !peopleVisible
+            flashCharacters();
+            createCharacters();
+            loops++;
+            if (loops < 12) {
+                setTimeout(gameLoop, 20000);
+            } else {
+                alert("Game Over! Time is up!")
+                window.location.href="Clicker.html"();
+            }
+        }
+        function flashCharacters() {
+            var board = document.getElementById("board")
+            var classToSet = "";
+            if (peopleVisible) {
+                classToSet = "box visible";
+            } else {
+                classToSet = "box hidden";
+            }
+            for (var index = 0; index < 64; index++) {
+                board.children[index].className = classToSet;
+            }
+        }
+        function createCharacters() {
+            var board = document.getElementById("board")
+            for (var index = 0; index < 68; index++) {
+                board.children[index].innerHTML = "Cilk Me"
+                board.children[index].onclick = function () {
+                    alert("Don't click mispelled boxes! ");
+                }
+            }
+            var randomNumber = Math.floor(Math.random() * 68) + 1;
+            board.children[randomNumber - 1].innerHTML = "Click Me!";
+            board.children[randomNumber - 1].onclick = function () {
+                window.location.href = "Clicker Level 3.html"
+            }
+        }
+
+    </script>
+</body>
+
+</html>
