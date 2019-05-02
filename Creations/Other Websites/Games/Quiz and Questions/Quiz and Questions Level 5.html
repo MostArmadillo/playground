@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Quiz and Questions Game Level 3</title>
+    <script>
+        var count = 0;
+        function updateCount() {
+            count = count + 1;
+            document.getElementById("number").innerHTML = count;
+            setTimeout(updateCount, 1000);
+        }
+    </script>
+    <style>
+        #board {
+            background-color: lightblue;
+            width: 100%;
+            height: 1700px;
+            border: 1px solid lightblue;
+            text-align: left;
+
+            float: left;
+        }
+
+        .number {
+            color: black;
+            font-size: 18pt;
+        }
+
+        .box {
+            background-color: blue;
+            width: 240px;
+            height: 240px;
+            float: left;
+            margin: 10px;
+            padding: 10px;
+            font-size: 18pt;
+        }
+
+        #button {
+            text-align: center;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .visible {
+            display: block;
+        }
+
+        .text {
+            text-align: center;
+            font-size: 18pt;
+        }
+
+        .heading {
+            text-align: center;
+            font-size: 18pt;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="board">
+        <div id="number"></div>
+
+
+
+
+
+        <div class="box">1 How do you feel with this new flashing? Also be on the lookout for secrets and here is my
+            question: how many seconds does it take for it to flash?</div>
+        <Div class="box">2 Can you still remember the code? (or copy and paste it from its location)</Div>
+        <div class="box" onclick="truth()">3 Don't click me, I will take you back to the first level if you do<strong
+                onclick="intel()">.</strong></div>
+        <div class="box">4 Yes or No Question: are there 2 secrets in this level? </div>
+        <div class="box" onclick="truth2()">5 Click me PLEASE I will transport you to the next level.
+        </div>
+        <div class="box" onclick="truth3()">6 PLEASE CLICK ME TO GET TRANSPORTED TO THE NEXT LEVEL I AM NOT LIKE THE PREVIOUS BOX.</div>
+        <Div class="box">7 <em>I</em> hold <em>a</em> secret <strong>that</strong> you will never find<strong
+                onclick="secret()">!</strong>
+        </Div>
+        <div class="box">8 Is box 3 telling the truth? Yes or No?</div>
+        <div class="box">9 Want intel on a secret? Click <em onclick="lie()">HERE</em> </div>
+        <div class="box">10 What is the code of the 9th box's alert, I don't know the if it is lying or not.
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <p style="text-align: center; font-size: 18pt; float: center;"> One of the answers in the boxes above has the
+            answer to get to
+            the next level</p>
+
+        <div id="button">
+
+            <input id="textbox" type="text"> <br />
+            <input id="button" value="Submit Answer" type="button" onclick="checkanswer()">
+        </div>
+
+    </div>
+
+    <script>
+        var loops = 0;
+        var peopleVisible = false;
+        startGame();
+        function startGame() {
+            updateCount();
+            gameLoop();
+        }
+
+        function gameLoop() {
+            peopleVisible = !peopleVisible
+            flashCharacters();
+            loops++;
+            if (loops < 180) {
+                setTimeout(gameLoop, peopleVisible ? 5000 : 3000);
+            }
+            else {
+                alert("Time is up! Game over!")
+                location.window.href = "Quiz and Questions.html"
+
+            }
+        }
+        function checkanswer() {
+            var answer = document.getElementById("textbox")
+            var answertext = answer.value
+            if (answertext == "2304") {
+                window.location.href = "Quiz and Questions Level 6.html"
+            } else {
+                alert("Not this one")
+            }
+        }
+        function lie() {
+            alert("box 3 has no secrets, OK YOU CAUGHT ME I know you know that I didn't do what I would do in the box but I say box 3 has no secrets plus my code is 2304")
+
+        }
+        function flashCharacters() {
+            var board = document.getElementById("board");
+            var classToSet = "";
+            if (peopleVisible) {
+                classToSet = "box visible";
+            } else {
+                classToSet = "box hidden";
+            }
+            for (var index = 0; index < 13; index++) {
+                board.children[index].className = classToSet;
+            }
+        }
+        function truth() {
+            alert("I TOLD YOU NOT TO CLICK ME HAVE FUN AT THE FIRST LEVEL AGAIN")
+            window.location.href = "Quiz and Questions.html"
+        }
+        function intel() {
+            alert("Alright you found my secret: The correct box is 10 but you will still suffer the punishment of clicking me")
+            window.location.href = "Quiz and Questions.html"
+        }
+        function truth2() {
+            alert("You fell in my trap HA! NOW SUFFER BY GOING BACK 3 LEVELS")
+            window.location.href = "Quiz and Questions Level 2.html"
+        }
+        function truth3() {
+            alert("See! I am not a liar!")
+            window.location.href = "Quiz and Questions Level 6.html"
+        }
+        function secret() {
+            alert("HA you fell in my trap and I will...")
+            alert("Just kidding! I will say that box 6 is telling the truth but box 5 isn't but I can't make this secret to good so I will bring one level :/")
+            window.location.href = "Quiz and Questions Level 4.html"
+            
+        }
+    </script>
+</body>
+
+</html>

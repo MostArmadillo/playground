@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Puzzle Game Level 1</title>
+        <style>
+            #board {
+                background-color: lightskyblue;
+                width: 100%;
+                height: 1000px;
+                font-size: 18pt;
+                text-align: center;
+                border: 4px solid black;
+            }
+            .box {
+                background-color: blue;
+                height: 120px;
+                width: 120px;
+                font-size: 12pt;
+                text-align: center;
+                margin: 10px;
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="board">
+            <h1>Can you beat this Game?</h1>
+            <br/>
+            <br/>
+            <br/>
+            Click the <em onclick="secret()">right</em> box
+            <br/>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box" onclick="level2()">Click Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+        </div>
+        <script>
+            function secret() {
+                alert("Right middle")
+            }
+            function level2() {
+                window.location.href = "PuzzleGame2.html"
+            }
+        </script>
+    </body>
+</html>

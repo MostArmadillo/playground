@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <title> Quiz and Questions Game Level 2</title>
+    <script>
+        var count = 0;
+        function updateCount() {
+            count = count + 1;
+            document.getElementById("number").innerHTML = count;
+            setTimeout(updateCount, 1000);
+        }
+    </script>
+    <style>
+        #board {
+            background-color: lightblue;
+            width: 100%;
+            height: 1700px;
+            border: 1px solid lightblue;
+            text-align: left;
+
+            float: left;
+        }
+
+        .number {
+            color: black;
+            font-size: 18pt;
+        }
+
+        .box {
+            background-color: blue;
+            width: 240px;
+            height: 240px;
+            float: left;
+            margin: 10px;
+            padding: 10px;
+            font-size: 18pt;
+           
+        }
+
+        #button {
+            text-align: center;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .visible {
+            display: block;
+        }
+
+        .text {
+            text-align: center;
+            font-size: 18pt;
+        }
+
+        .heading {
+            text-align: center;
+            font-size: 18pt;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div id="board">
+        <div id="number"></div>
+        <p class="heading"> Quiz and Questions Level 2</p>
+        <p>
+            <h1> Instructions </h1> <br />
+            Each box will have an answer, one of these boxes has the correct answer to be inputted in the textbox below
+            so you have to keep solving the boxes and guessing which boxes' answer is correct before the timer reaches
+            180 seconds.
+            Now refresh the page and start.
+        </p>
+
+        <div class="box">1 What is the answer to the number of states in the U.S added to 37 + 14 so the math is
+            "(number of states in U.S) + 37 + 14"</div>
+        <Div class="box">2 How many words is in the first paragraph on this page? Hint: Instructions paragraph</Div>
+        <div class="box">3 how many letters are in the 4th box?</div>
+        <div class="box">4 The amount of letters in box 3</div>
+        <div class="box">5 how many letters are in this box?
+        </div>
+        <div class="box">6 True or False: This box has a total of 36 letters?</div>
+        <Div class="box">7 Solve this poem: <br />
+            Too solve this poem. Find the hidden numbers. This poem tells in the instructions of this box aswell as a
+            clue for the answer to box 7
+            Fo.r the poem it asks for a three dighit number. One of our hidden numbers is obvious to locate, can you find
+            the hidden numbers to solve this box/poem? Plus this poem asks you if you ate something. (so random)
+            If you give up, here's a hint: Read this poem out loud and scroll down for an even bigger hint.
+        </Div>
+        <div class="box">8 There are a total of ? numbers in the BOXES ONLY.</div>
+        <div class="box">9 How many numbers does this have: CIHU89FYF2HFIAH1879FH109E190L</div>
+        <div class="box">10 The answer to this box is the answer to 1 + 1 + 1 + 1 + 1 + 1 + 1 + 0 + 0 x 0 = ?
+        </div>
+        
+        
+        <p style="text-align: center; font-size: 18pt; float: center;"> One of the answers in the boxes above has the
+            answer to get to
+            the next level</p>
+
+        <div id="button">
+
+            <input id="textbox" type="text"> <br />
+            <input id="button" value="Submit Answer" type="button" onclick="checkanswer()">
+        </div>
+
+    </div>
+    <p> word too = 2 and some words  are homophones that are the numbers of the code except for the obvious one</p>
+    
+    <script>
+        var loops = 0;
+        var peopleVisible = false;
+        startGame();
+        function startGame() {
+            updateCount();
+            gameLoop();
+        }
+
+        function gameLoop() {
+
+            loops++;
+            if (loops < 180) {
+                setTimeout(gameLoop, 1000);
+            }
+            else {
+                alert("Time is up! Game over!")
+                location.window.href = "Quiz and Questions.html"
+
+            }
+        }
+        function checkanswer() {
+            var answer = document.getElementById("textbox")
+            var answertext = answer.value
+            if (answertext == "2418") {
+                window.location.href = "Quiz and Questions Level 3.html"
+            } else {
+                alert(" Not this one")
+                
+            }
+        }
+    </script>
+</body>
+
+</html>

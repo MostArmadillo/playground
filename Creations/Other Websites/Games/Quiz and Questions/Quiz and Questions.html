@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Quiz and Questions Game</title>
+    <script>
+        var count = 0;
+
+        function updateCount() {
+            count = count + 1;
+            document.getElementById("number").innerHTML = count;
+            setTimeout(updateCount, 1000);
+        }
+    </script>
+    <style>
+        #board {
+            background-color: lightblue;
+            width: 100%;
+            height: 1700px;
+            border: 1px solid lightblue;
+            text-align: left;
+
+            float: left;
+        }
+
+        .number {
+            color: black;
+            font-size: 18pt;
+        }
+
+        .box {
+            background-color: blue;
+            width: 240px;
+            height: 240px;
+            float: left;
+            margin: 10px;
+            padding: 10px;
+            font-size: 18pt;
+        }
+
+        #button {
+            text-align: center;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .visible {
+            display: block;
+        }
+
+        .text {
+            text-align: center;
+            font-size: 18pt;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="board">
+        <div id="number"></div>
+        <p>
+            <h1> Instructions </h1> <br />
+            Each box will have an answer, one of these boxes has the correct answer to be inputted in the textbox below
+            so you have to keep solving the boxes and guessing which boxes' answer is correct before the timer reaches
+            180 seconds.
+            Now refresh the page and start.
+        </p>
+        <div class="box">1 How many letters are in this box?</div>
+        <Div class="box">2 The answer to box 7 but 1 is added to the number</Div>
+        <div class="box">3 how many o's are in this sentence: The room was covered in toys everywhere!</div>
+        <div class="box">4 How many more letters does this box have than box 1?</div>
+        <div class="box">5 If you pick 5 apples from a tree, how many apples did you take after taking 5 more apples?
+        </div>
+        <div class="box">6 True or False: This box has a total of 39 letters</div>
+        <Div class="box">7 LOLB look at it from a different side, what numbers do you see?</Div>
+        <div class="box">8 There are a total of ? numbers in the BOXES ONLY.</div>
+        <div class="box">9 What is the answer to box 1, added to the answer to box 5?</div>
+        <div class="box">10 If the code is 2 letters ahead of its original letter ex:
+            y = z or a = c, what is the original word for this code: FSl
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <p style="text-align: center; font-size: 18pt;"> Also remember this: 24815162342</p>
+        <div id="button">
+            <input id="textbox" type="text"> <br />
+            <input id="button" value="Submit Answer" type="button" onclick="checkanswer()" style="text-align: center;">
+        </div>
+
+    </div>
+    <script>
+        var loops = 0;
+        var peopleVisible = false;
+        startGame();
+        function startGame() {
+            updateCount();
+            gameLoop();
+        }
+
+        function gameLoop() {
+
+            loops++;
+            if (loops < 180) {
+                setTimeout(gameLoop, 1000);
+            }
+            else {
+                alert("Time is up! Game over!")
+                location.reload();
+
+            }
+        }
+        function checkanswer() {
+            var answer = document.getElementById("textbox")
+            var answertext = answer.value
+            if (answertext == "36") {
+                window.location.href = "Quiz and Questions Level 2.html"
+            } else {
+                alert("Not this one")
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>
