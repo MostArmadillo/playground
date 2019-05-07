@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Puzzle Game Level 4</title>
+        <title>Puzzle Game Level 8</title>
         <style>
             #board {
                 background-color: lightskyblue;
@@ -26,15 +26,18 @@
             .visible {
                 display: block;
             }
+            .heading {
+                text-align: center;
+            }
         </style>
     </head>
     <body>
         <div id="board">
-            <h1>Can you beat this Game?</h1>
+            <h1 class="heading">Can you beat this Game?</h1>
             <br/>
             <br/>
             <br/>
-            Check out the flashing! Also I will make the click me change location after each flash soon 
+            A ordinary level or is it?
 
             <br/>
             <div class="box">Clik Me!</div>
@@ -42,6 +45,47 @@
             <div class="box">Clik Me!</div>
             <div class="box">Clik Me!</div>
             <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box">Clik Me!</div>
+            <div class="box" onclick="level2()">Click Me!</div>
             <div class="box">Clik Me!</div>
             <div class="box">Clik Me!</div>
             <div class="box">Clik Me!</div>
@@ -86,56 +130,23 @@
             <div class="box">Clik Me!</div>
             <div class="box">Clik Me!</div>
             <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box" onclick="level2()">Click Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
-            <div class="box">Clik Me!</div>
+            
         </div>
         <script>
+            gameLoop();
            var peopleVisible = false;
            var loops = 0;
             function level2() {
-                window.location.href = "PuzzleGame5.html"
+                window.location.href = "PuzzleGame8.html"
             }
             function gameLoop() {
                 peopleVisible = !peopleVisible
                 flashCharacters();
                 loops++;
-                if(loops < 100000) {
+                if(loops > 100000) {
                     alert("_")
                 } else {
-                    setTimeout(gameLoop, peopleVisible ? 15000 : 5000)
+                    setTimeout(gameLoop, peopleVisible ? 1000 : 5000)
                 }
             }
             function flashCharacters() {
@@ -146,10 +157,11 @@
             } else {
                 classToSet = "box hidden";
             }
-            for (var index = 0; index < 80; index++) {
+            for (var index = 0; index < 92; index++) {
                 board.children[index].className = classToSet;
             }
         }
+       
         </script>
     </body>
 </html>
