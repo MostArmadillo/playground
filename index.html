@@ -1,90 +1,120 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title> MostArmadillo's Playground</title>
-    <style>
-      .heading {
-        background-color: lightgreen;
-        width: 100%;
-        height: 300px;
-        text-align: center;
-        font-size: 24pt;
-        border: 1px solid lightgreen;
-      }
-      .body {
-        background-color: lightblue;
-        width: 100%;
-        height: 700px;
-        text-align: center;
-        font-size: 18pt;
-        float: center;
-      }
-      .box {
-        background-color: blue;
-        width: 180px;
-        height: 180px;
-        text-align: center;
-        font-size: 18pt;
-        float: left;
-        margin: 10px;
-        padding: 10px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="heading">
-      <br/>
-      <br/>
-      
-      <p> MostArmadillo's Playground</p>
-    </div>
-    <div class="body">
-      <div class="box">Vermont <br/><input type="button" value="Go to Link" onclick="Vermont()"></div>
-      <div class="box">The American Gold Rush <br/><input type="button" value="Go to Link" onclick="Gold()"></div>
-      <div class="box"> Puzzle 1 <br/> <input type="button" value="Go to Link" onclick="Puzzle()"></div>
-      <div class="box"> Puzzle 2 <br/><input type="button" value="Go to Link" onclick="Puzzle2()"></div>
-      <div class="box"> John C. Fremont (WIP) <br/><input type="button" value="Go to Link" onclick="Fremont()"> </div>
-      <div class="box"> My first HTML Webpage from a tutorial book <br/><input type="button" value="Go to Link" onclick="MonkDiamond()"></div>
-      <div class="box"> Quiz and Questions Game! <br/><input type="button" value="Go to Link" onclick="QuizandQuestions()"></div>
-      <div class="box"> My First html with script tag website<br/><input type="button" value="Go to Link" onclick="js()"></div>
-      <div class="box"> Economies Website<br/><input type="button" value="Go to Link" onclick="ehome()"></div>
-      <div class="box"> States Website<br/><input type="button" value="Go to Link" onclick="states()"></div>
-      <div class="box"> A Clicker Game<br/><input type="button" value="Go to Link" onclick="Clicker()"></div>
-    </div>
-    <script>
-      function Vermont() {
-        window.location.href="\Creations\\Vermont\\Vermont.html"
-      }
-      function Gold() {
-        window.location.href="\Creations\\The Gold Rush\\Gold Rush.html"
-      }
-      function Puzzle() {
-        window.location.href="\Creations\\Puzzle\\Puzzle.html"
-      }
-      function Puzzle2() {
-        window.location.href="\Creations\\Puzzle\\Puzzle2.html"
-      }
-      function Fremont() {
-        window.location.href="\Creations\\Other Websites\\John C. Fremont.html"
-      }
-      function MonkDiamond() {
-        window.location.href="\Creations\\Practice Coding\\Monk Diamond\\monkdiamonddiscovery.html"
-      }
-      function QuizandQuestions() {
-        window.location.href="\Creations\\Games\\Quiz and Questions\\Quiz and Questions.html"
-      }
-      function js() {
-        window.location.href="\Creations\\Practice Coding\\Monk Diamond\\password.html"
-      }
-      function ehome() {
-        window.location.href="\Creations\\Other Websites\\Economics\\ehome.html"
-      }
-      function states() {
-        window.location.href="\Creations\\Other Websites\\States\\home.html"
-      }
-      function Clicker() {
-        window.location.href = "\Creations\\Games\\PuzzleGame.html"
-      }
-    </script>
-  </body>
+
+<head>
+  <title> MostArmadillo's Playground</title>
+  <style>
+    .heading {
+      background-color: lightgreen;
+      width: 100%;
+      height: 300px;
+      text-align: center;
+      font-size: 24pt;
+      border: 1px solid lightgreen;
+    }
+
+    .body {
+      background-color: lightblue;
+      width: 100%;
+      height: 2000px;
+      text-align: center;
+      font-size: 40pt;
+      float: center;
+    }
+
+    .box {
+      background-color: blue;
+      width: 180px;
+      height: 180px;
+      text-align: center;
+      font-size: 18pt;
+      float: left;
+      margin: 10px;
+      padding: 10px;
+    }
+
+    .link {
+      color: purple;
+    }
+
+    .p {
+      font-size: 30pt;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="heading">
+    <br />
+
+
+    <p style="font-size: 40pt;"> MostArmadillo's Playground</p>
+
+
+    <p>Click Purple Text to go to Link</p>
+  </div>
+  <div class="body">
+    <a class="link" onclick="Vermont()">My Website About Vermont!</a>
+    <p class="p"> Vermont is a nice place, including other states in the Northeast
+      part of America. Vermont will have many differences if you live
+      in California or other states in the West. Climate changes, national parks, amazing environments
+      ,views, and different ecosystems would make a huge difference in the area where you live.</p>
+    <a class="link" onclick="Gold()">My Website About The California Gold Rush</a>
+    <p class="p">The Gold Rush was when millions of people from the entire world came to California in hopes to find
+      gold and become rich!
+
+      The California Gold Rush made a huge impact on California and the Westward Expansion. Read how</p>
+    <a class="link" onclick="Puzzle()">A Fun Puzzle, Can you solve it?</a>
+    <p class="p">Can you find the hidden passcode?
+      1st step: 103206******
+    </p>
+    <a class="link" onclick="Puzzle2()">Another fun puzzle, a little easier</a>
+    <p class="p">One of these Click Me's reveal the code, can you find it?</p>
+    <a class="link" onclick="QuizandQuestions()">A fun game with quizes and questions! (and some other mechanics)</a>
+    <p class="p">Each box will have an answer, one of these boxes has the correct answer to be inputted in the textbox
+      below so you have to keep solving the boxes and guessing which boxes' answer is correct before the timer reaches
+      180 seconds. Now refresh the page and start.</p>
+      <a class="link" onclick="ehome()">Economics Website</a>
+      <p class="p"></p>
+      <a class="link" onclick="Clicker()">A fun clicking game!</a>
+      <p class="p"> Can you beat this Game?</p>
+  </div>
+  <script>
+    function Vermont() {
+      window.location.href = "\Creations\\Vermont\\Vermont.html"
+    }
+    function Gold() {
+      window.location.href = "\Creations\\The Gold Rush\\Gold Rush.html"
+    }
+    function Puzzle() {
+      window.location.href = "\Creations\\Puzzle\\Puzzle.html"
+    }
+    function Puzzle2() {
+      window.location.href = "\Creations\\Puzzle\\Puzzle2.html"
+    }
+    function Fremont() {
+      window.location.href = "\Creations\\Other Websites\\John C. Fremont.html"
+    }
+    function MonkDiamond() {
+      window.location.href = "\Creations\\Practice Coding\\Monk Diamond\\monkdiamonddiscovery.html"
+    }
+    function QuizandQuestions() {
+      window.location.href = "\Creations\\Games\\Quiz and Questions\\Quiz and Questions.html"
+    }
+    function js() {
+      window.location.href = "\Creations\\Practice Coding\\Monk Diamond\\password.html"
+    }
+    function ehome() {
+      window.location.href = "\Creations\\Other Websites\\Economics\\ehome.html"
+    }
+    function states() {
+      window.location.href = "\Creations\\Other Websites\\States\\home.html"
+    }
+    function Clicker() {
+      window.location.href = "\Creations\\Games\\PuzzleGame.html"
+    }
+    
+  </script>
+</body>
+
 </html>
