@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Quiz and Questions Game Level 7</title>
+    <script>
+        var count = 0;
+        function updateCount() {
+            count = count + 1;
+            document.getElementById("number").innerHTML = count;
+            setTimeout(updateCount, 1000);
+        }
+    </script>
+    <style>
+        #board {
+            background-color: lightblue;
+            width: 100%;
+            height: 1700px;
+            border: 1px solid lightblue;
+            text-align: left;
+
+            float: left;
+        }
+
+        .number {
+            color: black;
+            font-size: 18pt;
+        }
+
+        .box {
+            background-color: blue;
+            width: 240px;
+            height: 240px;
+            float: left;
+            margin: 10px;
+            padding: 10px;
+            font-size: 18pt;
+        }
+
+        #button {
+            text-align: center;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .visible {
+            display: block;
+        }
+
+        .text {
+            text-align: center;
+            font-size: 18pt;
+        }
+
+        .heading {
+            text-align: center;
+            font-size: 18pt;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="board">
+        <div id="number" onclick="function2()"></div>
+
+
+
+
+
+        <div class="box">1 The answer box is becoming more and more useless, it is not becoming quiz and questions
+            anymore it will soon become secret finding.
+        </div>
+        <Div class="box">2 This is the last <em onclick="why()">quiz and questions level</em>, can you beat it? I know
+            this game has said it gets
+            harder when you reach higher levels so it is going to an easier game. Anyway here is my question: look at
+            box 3
+
+        </Div>
+        <div class="box" onclick="truth()">3 YES YES YES YES YES YES YES YES YES YES <div onclick="answer()">YOS</div>
+            YES YES YES I bet
+            you are lazy and didn't read all the yes's and didn't notice one of them is actually Yos. I dare you to
+            click on the Yos
+        </div>
+        <div class="box">4 I think question 3 has something suspicious or is it a trap? Anyway how many yes's only are
+            in the 3rd box</div>
+        <div class="box">5 This word is scrambled and can you unscramble it?: tapoto
+
+        </div>
+        <div class="box" onclick="truth3()">6 It is not easy to solve the amount of letters on this page >:) (try the
+            other boxes before doing this)</div>
+        <Div class="box">
+            <div onclick="level7()">7 <----- Click It</div> </Div> <div class="box">8 R.I.P BOX</div>
+            <div class="box">9 Click <em onclick="intel()">here</em> to get secret intel!</div>
+            <div class="box">10 What is the code of the 9th box's alert, I don't know the if it is lying or not.
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <p style="text-align: center; font-size: 18pt; float: center;"> One of the answers in the boxes above has
+                the
+                answer to get to
+                the next level</p>
+
+            <div id="button">
+
+
+            </div>
+        </div>
+
+        <script>
+            var loops = 0;
+            var peopleVisible = false;
+            startGame();
+            function startGame() {
+                updateCount();
+                gameLoop();
+            }
+
+            function gameLoop() {
+                peopleVisible = !peopleVisible
+                flashCharacters();
+                loops++;
+                if (loops < 180) {
+                    setTimeout(gameLoop, peopleVisible ? 4000 : 3000);
+                }
+                else {
+                    alert("Time is up! Game over!")
+                    location.window.href = "Quiz and Questions.html"
+
+                }
+            }
+            function checkanswer() {
+                var answer = document.getElementById("textbox")
+                var answertext = answer.value
+                if (answertext == "potato") {
+                    alert("NOOOOO, YOU WILL NOT BEAT THIS GAME DO NOT ENTER POTATO45")
+                    alert("I'll unleash the last of my forces")
+                    window.location.href = "Quiz and Questions Level 2"
+                } else if (answertext == "potato45") {
+                    alert("The pain is forcing me to tell the true answer, I will never, do not enter potato4510110 please, I will use the last rewinds I have")
+                    window.location.href = "Quiz and Questions Level 5.html"
+                } else if(answertext == "potato4510110") {
+                    alert("Congrats! You beat the game! This game is a to be continued, you passed all the questions and quizzes or you found shortcuts and secrets and outwitted the game and the traps. Now you may head on to my next game when it is released")
+                }
+            }
+            
+            function lie() {
+                alert("box 3 has no secrets, OK YOU CAUGHT ME I know you know that I didn't do what I would do in the box but I say box 3 has no secrets plus my code is 2304")
+
+            }
+            function flashCharacters() {
+                var board = document.getElementById("board");
+                var classToSet = "";
+                if (peopleVisible) {
+                    classToSet = "box visible";
+                } else {
+                    classToSet = "box hidden";
+                }
+                for (var index = 0; index < 13; index++) {
+                    board.children[index].className = classToSet; F
+                }
+            }
+            function truth() {
+                alert("I TOLD YOU NOT TO CLICK ME HAVE FUN AT THE FIRST LEVEL AGAIN")
+                window.location.href = "Quiz and Questions.html"
+            }
+            function level7() {
+                window.location.href = "Quiz and Questions Level 7.html"
+            }
+            function intel() {
+                alert("if you clicked YOS in box 3, and entered potato, you know about the game trying to unleash the last of his forces against you to prevent entering the final codes I've found a way to stealth to the end without the game forces stopping you, enter potatostealth")
+            }
+            function truth2() {
+                alert("You fell in my trap HA! NOW SUFFER BY GOING BACK 3 LEVELS")
+                window.location.href = "Quiz and Questions Level 2.html"
+            }
+            function truth3() {
+                alert("See! I am not a liar!")
+                window.location.href = "Quiz and Questions Level 6.html"
+            }
+            function secret() {
+                alert("HA you fell in my trap and I will...")
+                alert("Just kidding! I will say that box 6 is telling the truth but box 5 isn't but I can't make this secret to good so I will bring one level :/")
+                window.location.href = "Quiz and Questions Level 4.html"
+
+            }
+            function function2() {
+                alert("Congrats on finding me and wait, what is happening?!")
+                alert("a GIANT SECRET is on this page!!!!???")
+                alert("CHECK AT THE BOTTOM OF THE PAGE")
+            }
+            function time() {
+                alert("THE TIMER NEEDS HELP maybe click or mouse over it?")
+            }
+            function big() {
+                alert("all this stress to find this secret AND THEN I GET TO")
+                alert("BRING YOU BACK TO LEVEL 1")
+                window.location.href = "Quiz and Questions.html"
+            }
+            function why() {
+                alert("so you really want to do this? Ok...")
+                window.location.href = "Quiz and Questions.html"
+            }
+            function answer() {
+                alert("The answer is potato AND I WILL NOT LET IT BE THIS EASY")
+                window.location.href = "Quiz and Questions.html"
+            }
+        </script>
+</body>
+
+</html>
