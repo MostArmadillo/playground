@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Puzzle Game Level 6</title>
+    <title>Puzzle Game Level 10</title>
     <style>
         #board {
             background-color: lightskyblue;
@@ -43,9 +43,10 @@
         <br />
         <br />
         <br />
-        Flashing will happen quicker starting at level 10
+       Looks similar to level 10 so watch out for the traps and also this game is throwing everything it got on you because flashing got arupbtly quicker
 
         <br />
+        <div class="box" onclick="trap()">Click   Me!</div>
         <div class="box">Clik Me!</div>
         <div class="box">Clik Me!</div>
         <div class="box">Clik Me!</div>
@@ -54,7 +55,7 @@
         <div class="box">Clik Me!</div>
         <div class="box">Clik Me!</div>
         <div class="box">Clik Me!</div>
-        <div class="box">Clik Me!</div>
+
         <div class="box">Clik Me!</div>
         <div class="box">Clik Me!</div>
         <div class="box">Clik Me!</div>
@@ -78,7 +79,20 @@
         <div class="box">Clik Me!</div>
         <div class="box">Clik Me!</div>
         <div class="box">Clik Me!</div>
-        <div class="box" onclick="trap()">C1ik Me!(I am not the answer but click me)</div>
+        <div class="box">Clik Me!</div>
+        <div class="box">Clik Me!</div>
+        <div class="box">Clik Me!</div>
+        <div class="box">Clik Me!</div>
+        <div class="box" onclick="trap()">Clik Me! No I am the answer!</div>
+        <div class="box">Clik Me!</div>
+        <div class="box">Clik Me!</div>
+        <div class="box">Clik Me!</div>
+        <div class="box">Clik Me!</div>
+        <div class="box">Clik Me!</div>
+        <div class="box">Clik Me!</div>
+        <div class="box">Clik Me!</div>
+
+        <div class="box">Clik Me! </div>
         <div class="box">Clik Me!</div>
         <div class="box">Clik Me!</div>
         <div class="box">Clik Me!</div>
@@ -87,6 +101,25 @@
         <div class="box">Clik Me!</div>
         <div class="box">Clik Me!</div>
         <div class="box">Clik Me!</div>
+        <div class="box">Clik Me!</div>
+
+        <div class="box">Clik Me!</div>
+        <div class="box">Clik Me!</div>
+        <div class="box">Clik Me!</div>
+        <div class="box">Clik Me!</div>
+        <div class="box" onclick="trap()">Click Me! I dare you to</div>
+        <div class="box">Clik Me!</div>
+        <div class="box">Clik Me!</div>
+        <div class="box">Clik Me!</div>
+        <div class="box">Clik Me!</div>
+        <div class="box">Clik Me!</div>
+        <div class="box">Clik Me!</div>
+        <div class="box">Clik Me!</div>
+        <div class="box">Clik Me!</div>
+        <div class="box">Clik Me!</div>
+        <div class="box">Clik Me!</div>
+        <div class="box">Clik Me!</div>
+        <div class="box" onclick="level2()">Clik Me! I am the true answer!</div>
         <div class="box">Clik Me!</div>
         <div class="box">Clik Me!</div>
         <div class="box">Clik Me!</div>
@@ -105,43 +138,13 @@
         <div class="box">Clik Me!</div>
         <div class="box">Clik Me!</div>
 
-        <div class="box">Clik Me!</div>
-        <div class="box">Clik Me!</div>
-        <div class="box">Clik Me!</div>
-        <div class="box">Clik Me!</div>
-        <div class="box">Clik Me!</div>
-        <div class="box">Clik Me!</div>
-        <div class="box">Clik Me!</div>
-        <div class="box">Clik Me!</div>
-        <div class="box">Clik Me!</div>
-        <div class="box">Clik Me!</div>
-        <div class="box">Clik Me!</div>
-        <div class="box">Clik Me!</div>
-        <div class="box" onclick="level2()">Click Me!</div>
-        <div class="box">Clik Me!</div>
-        <div class="box">Clik Me!</div>
-        <div class="box">Clik Me!</div>
-        <div class="box">Clik Me!</div>
-        <div class="box">Clik Me!</div>
-        <div class="box">Clik Me!</div>
-        <div class="box">Clik Me!</div>
-        <div class="box">Clik Me!</div>
-        <div class="box">Clik Me!</div>
-        <div class="box">Clik Me!</div>
-        <div class="box">Clik Me!</div>
-        <div class="box">Clik Me!</div>
-        <div class="box">Clik Me!</div>
-        <div class="box">Clik Me!</div>
-        <div class="box">Clik Me!</div>
-        <div class="box">Clik Me!</div>
-        <div class="box">Clik Me!</div>
     </div>
     <script>
         gameLoop();
         var peopleVisible = false;
         var loops = 0;
         function level2() {
-            window.location.href = "PuzzleGame7.html"
+            window.location.href = "PuzzleGame12.html"
         }
         function gameLoop() {
             peopleVisible = !peopleVisible
@@ -150,7 +153,7 @@
             if (loops > 100000) {
                 alert("_")
             } else {
-                setTimeout(gameLoop, peopleVisible ? 10000 : 5000)
+                setTimeout(gameLoop, peopleVisible ? 5000 : 5000)
             }
         }
         function flashCharacters() {
@@ -166,7 +169,8 @@
             }
         }
         function trap() {
-            alert("in future levels (starting at level 10), there will be traps that will take you backward in levels. This trap is only an example and nothing bad will happen")
+            alert("You fell in a trap so go back 5 levels! HAHAHA")
+            window.location.href = "PuzzleGame6.html"
         }
     </script>
 </body>
