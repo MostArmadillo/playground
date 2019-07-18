@@ -19,6 +19,28 @@
             text-align: center;
         }
     </style>
+    <script>
+        function addItem() {
+   var newItem = document.createElement("div");
+   newItem.innerHTML = document.getElementById("textbox").value;
+   newItem.onclick = removeItem;
+   document.getElementById("list").appendChild(newItem);
+   saveList();
+  }
+  function removeItem() {
+   document.getElementById("list").removeChild(this);
+   saveList();
+  }
+  function saveList() {
+   localStorage.storedList = document.getElementById("list").innerHTML;
+  }
+  function loadList() {
+   document.getElementById("list").innerHTML = localStorage.storedList;
+   for(var i = 0; i < list.children.length; i++) {
+    list.children[i].onclick = removeItem;
+   }
+  }
+    </script>
 </head>
 
 <body>
@@ -32,12 +54,21 @@
     <div class="portal">
         <br />
         <br />
+        <div style="float: right;">
+        <p style="font-size: 60px;">Saved Solutions:</p>
+        <input id="textbox" type="text" value="Type Solutions Here" style="font-size: 40px;">
+        <div id="list" style="font-size: 40px;">
+        </div>
         <br />
-
+    </div>
+    <br/>
+    <br/>
         <a href="The Annoying Puzzles Level 1.html">Portal to First Level</a>
     </div>
     <script>
-
+          if(localStorage.storedList) {
+            loadList();
+        }
     </script>
 </body>
 

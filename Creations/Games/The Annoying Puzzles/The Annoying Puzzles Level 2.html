@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>The Annoying Puzzles Level 2 </title>
+    <title>The Annoying Puzzles Level 2</title>
     <style>
         .introduction {
             background-color: yellow;
@@ -21,49 +21,86 @@
     </style>
     <script>
         function addItem() {
-   var newItem = document.createElement("div");
-   newItem.innerHTML = document.getElementById("textbox").value;
-   newItem.onclick = removeItem;
-   document.getElementById("list").appendChild(newItem);
-   saveList();
-  }
-  function removeItem() {
-   document.getElementById("list").removeChild(this);
-   saveList();
-  }
-  function saveList() {
-   localStorage.storedList = document.getElementById("list").innerHTML;
-  }
-  function loadList() {
-   document.getElementById("list").innerHTML = localStorage.storedList;
-   for(var i = 0; i < list.children.length; i++) {
-    list.children[i].onclick = removeItem;
-   }
-  }
+            var newItem = document.createElement("div");
+            newItem.innerHTML = document.getElementById("textbox").value;
+            newItem.onclick = removeItem;
+            document.getElementById("list").appendChild(newItem);
+            saveList();
+        }
+        function removeItem() {
+            document.getElementById("list").removeChild(this);
+            saveList();
+        }
+        function saveList() {
+            localStorage.storedList = document.getElementById("list").innerHTML;
+        }
+        function loadList() {
+            document.getElementById("list").innerHTML = localStorage.storedList;
+            for (var i = 0; i < list.children.length; i++) {
+                list.children[i].onclick = removeItem;
+            }
+        }
     </script>
 </head>
 
 <body>
     <div class="introduction">
         <h1>The Annoying Quiz</h1>
-        
+
     </div>
     <div class="portal">
         <br />
-        <p>If you want saved progress, you can add the solutions to each annoying puzzle here so you can get back to your current level.</p>
+        <p>If you want saved progress, you can add the solutions to each annoying puzzle here so you can get back to
+            your current level.</p>
         <p>Type 1 Puzzle solution at a Time then press the button before typing the solution to the next puzzle</p>
         <p>The list of saved solutions will load on others levels as well</p>
-        <input type="text" value="Type Solutions Here " id="textbox"> <br/>
+        <input type="text" value="Type Solutions Here " id="textbox"> <br />
         <input type="button" value="Add Solution" id="button" onclick="addItem()">
         <div id="list">
-           
+
         </div>
+        <p>I could have easily added way more boxes but I will go easy on you for now.</p>
+        <input id="puzzlebox" value="Enter the Code Here" type="text"><input id="puzzlebox" value="Enter the Code Here"
+            type="text"><input id="puzzlebox" value="Enter the Code Here" type="text"><input id="puzzlebox"
+            value="Enter the Code Here" type="text"><input id="puzzlebox" value="Enter the Code Here" type="text"><input
+            id="puzzlebox" value="Enter the Code Here" type="text"><input id="puzzlebox" value="Enter the Code Here"
+            type="text"><input id="puzzlebox" value="Enter the Code Here" type="text"><input id="puzzlebox"
+            value="Enter the Code Here" type="text"><input id="puzzlebox" value="Enter the Code Here" type="text"><input
+            id="puzzlebox" value="Enter the Code Here" type="text"><input id="puzzlebox" value="Enter the Code Here"
+            type="text"><input id="puzzleboxanswer" value="Enter the Code Here" type="text"><input id="puzzlebox"
+            value="Enter the Code Here" type="text"><input id="puzzlebox" value="Enter the Code Here" type="text"><input
+            id="puzzlebox" value="Enter the Code Here" type="text"><input id="puzzlebox" value="Enter the Code Here"
+            type="text"><input id="puzzlebox" value="Enter the Code Here" type="text"><input id="puzzlebox"
+            value="Enter the Code Here" type="text"><input id="puzzlebox" value="Enter the Code Here" type="text">
+        <input id="puzzlebox" value="Enter the Code Here" type="text"><input id="puzzlebox" value="Enter the Code Here"
+            type="text"> <input id="puzzlebox" value="Enter the Code Here" type="text"><input id="puzzlebox"
+            value="Enter the Code Here" type="text"> <input id="puzzlebox" value="Enter the Code Here"
+            type="text"><input id="puzzlebox" value="Enter the Code Here" type="text"> <input id="puzzlebox"
+            value="Enter the Code Here" type="text"><input id="puzzlebox" value="Enter the Code Here" type="text">
+        <input id="puzzlebox" value="Enter the Code Here" type="text"><input id="puzzlebox" value="Enter the Code Here"
+            type="text"> <input id="puzzlebox" value="Enter the Code Here" type="text"><input id="puzzlebox"
+            value="Enter the Code Here" type="text"> <input id="puzzlebox" value="Enter the Code Here"
+            type="text"><input id="puzzlebox" value="Enter the Code Here" type="text"> <input id="puzzlebox"
+            value="Enter the Code Here" type="text"><input id="puzzlebox" value="Enter the Code Here" type="text">
+        <input id="puzzlebox" value="Enter the Code Here" type="text"><input id="puzzlebox" value="Enter the Code Here"
+            type="text"> <input id="puzzlebox" value="Enter the Code Here" type="text"><input id="puzzlebox"
+            value="Enter the Code Here" type="text">
         
+        <input type="button" value="Press if you think the box you put the code in is the right box"
+            onclick="checkanswer();">
     </div>
     <script>
-        if(localStorage.storedList) {
+        if (localStorage.storedList) {
             loadList();
         }
+        function checkanswer() {
+            var answer = getElementById("puzzleboxanswer");
+            answertext = answer.value;
+            if (answertext == "200817") {
+                window.location.href = "The Annoying Puzzles Level 2.html"
+            }
+        }
+        
     </script>
 </body>
 

@@ -18,51 +18,77 @@
             font-size: 24;
             text-align: center;
         }
+
+        .puzzlebox {
+            font-size: 24;
+        }
     </style>
     <script>
         function addItem() {
-   var newItem = document.createElement("div");
-   newItem.innerHTML = document.getElementById("textbox").value;
-   newItem.onclick = removeItem;
-   document.getElementById("list").appendChild(newItem);
-   saveList();
-  }
-  function removeItem() {
-   document.getElementById("list").removeChild(this);
-   saveList();
-  }
-  function saveList() {
-   localStorage.storedList = document.getElementById("list").innerHTML;
-  }
-  function loadList() {
-   document.getElementById("list").innerHTML = localStorage.storedList;
-   for(var i = 0; i < list.children.length; i++) {
-    list.children[i].onclick = removeItem;
-   }
-  }
+            var newItem = document.createElement("div");
+            newItem.innerHTML = document.getElementById("textbox").value;
+            newItem.onclick = removeItem;
+            document.getElementById("list").appendChild(newItem);
+            saveList();
+        }
+        function removeItem() {
+            document.getElementById("list").removeChild(this);
+            saveList();
+        }
+        function saveList() {
+            localStorage.storedList = document.getElementById("list").innerHTML;
+        }
+        function loadList() {
+            document.getElementById("list").innerHTML = localStorage.storedList;
+            for (var i = 0; i < list.children.length; i++) {
+                list.children[i].onclick = removeItem;
+            }
+        }
     </script>
 </head>
 
 <body>
     <div class="introduction">
         <h1>The Annoying Quiz</h1>
-        
+
     </div>
     <div class="portal">
         <br />
-        <p>If you want saved progress, you can add the solutions to each annoying puzzle here so you can get back to your current level.</p>
+        <p>If you want saved progress, you can add the solutions to each annoying puzzle here so you can get back to
+            your current level.</p>
         <p>Type 1 Puzzle solution at a Time then press the button before typing the solution to the next puzzle</p>
         <p>The list of saved solutions will load on others levels as well</p>
-        <input type="text" value="Type Solutions Here " id="textbox"> <br/>
+        <input type="text" value="Type Solutions Here " id="textbox"> <br />
         <input type="button" value="Add Solution" id="button" onclick="addItem()">
         <div id="list">
-           
+
         </div>
-        
+        <p>First Level: Code is 200817, one of these boxes will bring you to the next level</p>
+        <input class="puzzlebox" value="Enter the Code Here" type="text"><input class="puzzlebox"
+            value="Enter the Code Here" type="text"><input class="puzzlebox" value="Enter the Code Here"
+            type="text"><input class="puzzlebox" value="Enter the Code Here" type="text"><input class="puzzlebox"
+            value="Enter the Code Here" type="text"><input id="puzzleboxanswer" value="Enter the Code Here"
+            type="text" style="font-size: 24;"><input class="puzzlebox" value="Enter the Code Here" type="text"><input class="puzzlebox"
+            value="Enter the Code Here" type="text"><input class="puzzlebox" value="Enter the Code Here"
+            type="text">
+        <p>Press the button if you think the box you put the code in is the <strong onclick="secret()">right</strong>
+            box</p>
+        <input type="button" value="Press if you think the box you put the code in the the right box" id="answerbutton"
+            onclick="checkanswer();">
     </div>
     <script>
-        if(localStorage.storedList) {
+        if (localStorage.storedList) {
             loadList();
+        }
+        function checkanswer() {
+            var answer = getElementById("puzzleboxanswer")
+            var answertext = answer.value
+            if (answertext == "200817") {
+                window.location.href = "The Annoying Puzzles Level 2.html";
+            }
+        }
+        function secret() {
+            alert("You either played Quiz and Questions or my random clicking game to find this secret, sadly this one secret won't give you an advandage because I haven't introduced the secrets yet")
         }
     </script>
 </body>
